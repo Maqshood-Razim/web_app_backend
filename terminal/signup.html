@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #495057;
+        }
+        input[type="text"], input[type="password"] ,input[type="email"]{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #b30000;
+        }
+        input[type="submit"]:active {
+            background-color: #b30000;
+            transform: translateY(1px);
+        }
+        input[type="button"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+        input[type="button"]:active {
+            background-color: #0056b3;
+            transform: translateY(1px);
+        }
+        #admin{
+            width: 100%;
+            padding: 12px;
+            background-color: #23df16;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        #admin:hover{
+            background-color: #099e1f;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Sign up</h1>
+        <form action="/signup" method="post" id="signup-form">
+            <input type="text" id="username" name="username" placeholder="Username" required><br>
+            <input type="email" id="email" name="email" placeholder="E-mail" required><br>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <br>
+            <p class="error-message">{{.Error}}</p>
+            <input type="submit" value="Sign up"><br><br>
+            <a href="/login"><input type="button" value="login"></a><br><br>
+            <!-- <a href="/admin"><input type="button" value="Admin" id="admin"></a> -->
+        </form>
+    </div>
+    <script src="json.js"></script>
+</body>
+</html>
